@@ -1,0 +1,20 @@
+{
+  "name": "mern-jobify",
+  "version": "1.0.0",
+  "description": "Project in Action - [Jobify](https://www.jobify.live/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JGitHub25/mern-jobify.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JGitHub25/mern-jobify/issues"
+  },
+  "homepage": "https://github.com/JGitHub25/mern-jobify#readme"
+}

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Project in Action - [Jobify](https://www.jobify.live/)",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/JGitHub25/mern-jobify#readme",
   "devDependencies": {
+    "concurrently": "^7.0.0",
     "nodemon": "^2.0.15"
   },
   "dependencies": {

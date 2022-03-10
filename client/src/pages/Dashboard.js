@@ -1,19 +1,7 @@
-import { useEffect } from "react";
+import { useAppContext } from "../context/appContext";
 
 export const Dashboard = () => {
-  const fetchData = async () => {
-    try {
-      const response = await fetch("/api/v1/");
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const { user } = useAppContext();
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  return <h1>Dashboard page</h1>;
+  return <h1>Dashboard page for {user && user.name}</h1>;
 };

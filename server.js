@@ -17,7 +17,7 @@ import { jobsRouter } from "./routes/jobsRoutes.js";
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Welcome friend!");
+  res.send("Welcome friends!");
 });
 
 app.get("/api/v1", (req, res) => {

@@ -20,6 +20,10 @@ app.get("/", (req, res) => {
   res.send("Welcome friend!");
 });
 
+app.get("/api/v1", (req, res) => {
+  res.json({ msg: "Welcome friend through JSON!" });
+});
+
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/jobs", jobsRouter);
 

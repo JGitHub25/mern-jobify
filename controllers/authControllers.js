@@ -1,6 +1,6 @@
 import { UserModel } from "../models/UserSchema.js";
 import { StatusCodes } from "http-status-codes";
-import { BadRequest } from "../errors/index.js";
+import { BadRequest, UnauthenticatedError } from "../errors/index.js";
 
 const register = async (req, res) => {
   const { name, email, password } = req.body;

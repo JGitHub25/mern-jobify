@@ -16,7 +16,7 @@ const initialState = {
 
 export function Register() {
   const [values, setValues] = useState(initialState);
-  const { isLoading, showAlert, alertDanger, registerUser, user } =
+  const { isLoading, showAlert, alertDanger, registerUser, loginUser, user } =
     useAppContext();
   const navigate = useNavigate();
 
@@ -38,10 +38,10 @@ export function Register() {
       return;
     }
 
+    const userData = { name, email, password };
     if (isMember) {
-      console.log("Already a member!");
+      loginUser(userData);
     } else {
-      const userData = { name, email, password };
       registerUser(userData);
     }
   };

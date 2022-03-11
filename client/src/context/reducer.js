@@ -4,6 +4,9 @@ import {
   REGISTER_USER_BEGIN,
   REGISTER_USER_SUCCESS,
   REGISTER_USER_ERROR,
+  LOGIN_USER_BEGIN,
+  LOGIN_USER_SUCCESS,
+  LOGIN_USER_ERROR,
 } from "./actions";
 
 export const reducer = (state, action) => {
@@ -41,6 +44,31 @@ export const reducer = (state, action) => {
         alertText: "User created! Taking you to your dashboard!",
       };
     case REGISTER_USER_ERROR:
+      return {
+        ...state,
+        isLoading: false,
+        showAlert: true,
+        alertType: "danger",
+        alertText: action.payload.msg,
+      };
+    case LOGIN_USER_BEGIN:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case LOGIN_USER_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        user: action.payload.user,
+        token: action.payload.token,
+        userLocation: action.payload.location,
+        jobLocation: action.payload.location,
+        showAlert: true,
+        alertType: "success",
+        alertText: `Welcome back ${action.payload.user.name.toUpperCase()}! Taking you to your dashboard!...`,
+      };
+    case LOGIN_USER_ERROR:
       return {
         ...state,
         isLoading: false,

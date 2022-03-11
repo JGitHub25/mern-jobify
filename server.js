@@ -3,6 +3,7 @@ const app = express();
 import dotenv from "dotenv";
 dotenv.config();
 import "express-async-errors";
+import morgan from "morgan";
 
 import { connectDB } from "./db/connectDB.js";
 
@@ -13,6 +14,10 @@ import { authRouter } from "./routes/authRoutes.js";
 import { notFoundMiddleware } from "./middleware/not-found.js";
 import { errorHandlerMiddleware } from "./middleware/errorHandler.js";
 import { jobsRouter } from "./routes/jobsRoutes.js";
+
+if (process.env.NODE_ENV !== "production") {
+  app.use(morgan("dev"));
+}
 
 app.use(express.json());
 

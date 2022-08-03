@@ -7,6 +7,7 @@ import {
   LOGIN_USER_BEGIN,
   LOGIN_USER_SUCCESS,
   LOGIN_USER_ERROR,
+  TOGGLE_SIDEBAR
 } from "./actions";
 
 export const reducer = (state, action) => {
@@ -75,6 +76,10 @@ export const reducer = (state, action) => {
         showAlert: true,
         alertType: "danger",
         alertText: action.payload.msg,
+      };
+    case TOGGLE_SIDEBAR:
+      return {
+        ...state, showSidebar: !state.showSidebar
       };
     default:
       throw new Error(`no such action: ${action.type}`);

@@ -8,6 +8,7 @@ import {
   LOGIN_USER_BEGIN,
   LOGIN_USER_SUCCESS,
   LOGIN_USER_ERROR,
+  TOGGLE_SIDEBAR
 } from "./actions";
 import { reducer } from "./reducer";
 import axios from "axios";
@@ -26,6 +27,7 @@ export const initialState = {
   token: token || null,
   userLocation: location || "",
   jobLocation: location || "",
+  showSidebar: false
 };
 
 const AppContext = createContext();
@@ -102,9 +104,13 @@ export const AppProvider = ({ children }) => {
     clearAlert();
   };
 
+  const toggleSidebar = () => {
+    dispatch({ type: TOGGLE_SIDEBAR });
+  }
+
   return (
     <AppContext.Provider
-      value={{ ...state, alertDanger, registerUser, loginUser }}
+      value={{ ...state, alertDanger, registerUser, loginUser, toggleSidebar }}
     >
       {children}
     </AppContext.Provider>

@@ -7,8 +7,10 @@ import {
   LOGIN_USER_BEGIN,
   LOGIN_USER_SUCCESS,
   LOGIN_USER_ERROR,
-  TOGGLE_SIDEBAR
+  TOGGLE_SIDEBAR,
+  LOGOUT_USER
 } from "./actions";
+import { initialState } from "./appContext";
 
 export const reducer = (state, action) => {
   switch (action.type) {
@@ -80,6 +82,10 @@ export const reducer = (state, action) => {
     case TOGGLE_SIDEBAR:
       return {
         ...state, showSidebar: !state.showSidebar
+      };
+    case LOGOUT_USER:
+      return {
+        ...initialState, user: null, token: null, userLocation: '', jobLocation: ''
       };
     default:
       throw new Error(`no such action: ${action.type}`);

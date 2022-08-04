@@ -9,7 +9,7 @@ import {
   LOGIN_USER_SUCCESS,
   LOGIN_USER_ERROR,
   TOGGLE_SIDEBAR,
-  LOGOUT_USER
+  LOGOUT_USER,
 } from "./actions";
 import { reducer } from "./reducer";
 import axios from "axios";
@@ -113,6 +113,8 @@ export const AppProvider = ({ children }) => {
     dispatch({ type: LOGOUT_USER });
     removeUserFromLocalStorage()
   }
+
+
   return (
     <AppContext.Provider
       value={{ ...state, alertDanger, registerUser, loginUser, toggleSidebar, logoutUser }}
